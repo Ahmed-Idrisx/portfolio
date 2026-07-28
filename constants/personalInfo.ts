@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Ahmed Idris",
-  title: "Frontend Web Developer",
+  title: "Frontend Software Developer",
   roles: [
     "Software Engineer",
     "Frontend Developer",

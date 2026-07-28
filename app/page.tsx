@@ -1,4 +1,5 @@
 import Navbar from "@/components/layout/navbar";
+import About from "@/components/sections/about/about";
 
 import Hero from "@/components/sections/hero/hero";
 
@@ -10,6 +11,7 @@ const page = () => {
       <Navbar />
       <main className="grow">
         <Hero />
+        <About />
       </main>
     </div>
   );
