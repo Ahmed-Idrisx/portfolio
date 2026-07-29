@@ -3,6 +3,7 @@ import Navbar from "@/components/layout/navbar";
 import About from "@/components/sections/about/about";
 
 import Hero from "@/components/sections/hero/hero";
+import TechStack from "@/components/sections/tech-stack/TechStack";
 import Loader from "@/components/ui/Loader";
 import { AnimatePresence, motion } from "motion/react";
 
@@ -60,6 +61,7 @@ const Home = () => {
             <main className="grow">
               <Hero />
               <About />
+              <TechStack />
             </main>
           </motion.div>
         )}
