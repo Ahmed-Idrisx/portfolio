@@ -52,7 +52,7 @@ export default function Navbar() {
     >
       <div className="container max-w-7xl mx-auto px-4 md:px-8 flex justify-between items-center">
         {/* Logo */}
-        <Link href="#hero" className="flex items-center gap-2 group">
+        <Link href="" className="flex items-center gap-2 group">
           <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-linear-to-tr from-primary to-secondary shadow-lg shadow-primary/20">
             <Terminal className="h-5 w-5 text-white transition-transform duration-300 group-hover:rotate-12" />
           </div>

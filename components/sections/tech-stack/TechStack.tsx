@@ -57,7 +57,7 @@ export default function TechStack() {
   const serverSide = [
     { name: "Prisma", icon: Layers, color: "text-zinc-400" },
     { name: "PostgreSQL", icon: Database, color: "text-primary" },
-    { name: "REST APIs", icon: Workflow, color: "text-sky-500" },
+    { name: "RESTful APIs", icon: Workflow, color: "text-sky-500" },
     { name: "API Integrating", icon: Link2, color: "text-purple-500" },
   ];
 

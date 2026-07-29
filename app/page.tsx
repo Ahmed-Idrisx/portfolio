@@ -1,6 +1,7 @@
 "use client";
 import Navbar from "@/components/layout/navbar";
 import About from "@/components/sections/about/about";
+import Contact from "@/components/sections/contact/Contact";
 
 import Hero from "@/components/sections/hero/hero";
 import TechStack from "@/components/sections/tech-stack/TechStack";
@@ -62,6 +63,7 @@ const Home = () => {
               <Hero />
               <About />
               <TechStack />
+              <Contact />
             </main>
           </motion.div>
         )}
