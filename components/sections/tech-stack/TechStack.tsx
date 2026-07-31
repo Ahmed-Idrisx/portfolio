@@ -94,7 +94,7 @@ export default function TechStack() {
   return (
     <section
       id="tech-stack"
-      className="py-24 px-4 md:px-8 relative bg-background overflow-hidden border-t border-white/5"
+      className="py-8 md:py-24 px-4 md:px-8 relative bg-background overflow-hidden border-t border-white/5"
     >
       {/* Background ambient lighting spheres */}
       <div className="absolute top-[20%] left-[5%] w-100 h-100 bg-cyan/15 rounded-full blur-[130px] pointer-events-none" />
@@ -108,7 +108,7 @@ export default function TechStack() {
           eyebrowTitle="STACK & SKILLS"
           heading="Tools & Skills"
         />
-        <p className="text-zinc-400 max-w-2xl leading-relaxed text-sm md:text-base mb-16 -mt-10">
+        <p className="text-zinc-400 max-w-2xl leading-relaxed text-sm md:text-base mb-5">
           Develop using modern web standards. Here is the breakdown of my
           technology ecosystem, tools, and professional core competencies.
         </p>
@@ -124,7 +124,7 @@ export default function TechStack() {
             className="flex flex-col gap-6"
           >
             <div className="flex flex-col border-b border-white/5 pb-4">
-              <h3 className="text-2xl font-display font-bold text-white tracking-tight flex items-center gap-2">
+              <h3 className="text-lg sm:text-2xl font-display font-bold text-white tracking-tight flex items-center gap-2">
                 <Atom className="w-6 h-6 text-sky-400" />
                 Core Technologies
               </h3>
@@ -138,7 +138,7 @@ export default function TechStack() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-2 sm:gap-4"
             >
               {coreTechnologies.map((skill, idx) => {
                 const Icon = skill.icon;
@@ -152,14 +152,14 @@ export default function TechStack() {
                       borderColor: "rgba(255,255,255,0.15)",
                       boxShadow: "0 10px 20px rgba(0,0,0,0.4)",
                     }}
-                    className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950/50 border border-white/5 hover:bg-surface/40 transition-all duration-300 h-18 w-full relative overflow-hidden group/item cursor-default"
+                    className="flex items-center gap-4 p-3 rounded-2xl bg-zinc-950/50 border border-white/5 hover:bg-surface/40 transition-all duration-300 w-full relative overflow-hidden group/item cursor-default"
                   >
                     <div
-                      className={`p-2.5 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 ${skill.color} h-11 w-11`}
+                      className={`p-2.5 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 ${skill.color} w-8 h-8 sm:h-11 sm:w-11`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-sans font-semibold text-sm text-zinc-100 duration-300 truncate">
+                    <span className="font-sans font-semibold sm:text-sm text-xs text-zinc-100 group-hover/item:text-white transition-colors duration-300 truncate">
                       {skill.name}
                     </span>
                   </motion.div>
@@ -177,7 +177,7 @@ export default function TechStack() {
             className="flex flex-col gap-6"
           >
             <div className="flex flex-col border-b border-white/5 pb-4">
-              <h3 className="text-2xl font-display font-bold text-white tracking-tight flex items-center gap-2">
+              <h3 className="text-lg sm:text-2xl font-display font-bold text-white tracking-tight flex items-center gap-2">
                 <Cpu className="w-6 h-6 text-purple-400" />
                 ORMs & Server Side
               </h3>
@@ -191,7 +191,7 @@ export default function TechStack() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-2 sm:gap-4"
             >
               {serverSide.map((skill, idx) => {
                 const Icon = skill.icon;
@@ -205,14 +205,14 @@ export default function TechStack() {
                       borderColor: "rgba(255,255,255,0.15)",
                       boxShadow: "0 10px 20px rgba(0,0,0,0.4)",
                     }}
-                    className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950/50 border border-white/5 hover:bg-surface/40 transition-all duration-300 h-18 w-full relative overflow-hidden group/item cursor-default"
+                    className="flex items-center gap-4 p-3 rounded-2xl bg-zinc-950/50 border border-white/5 hover:bg-surface/40 transition-all duration-300 w-full relative overflow-hidden group/item cursor-default"
                   >
                     <div
-                      className={`p-2.5 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 ${skill.color} h-11 w-11`}
+                      className={`p-2.5 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 ${skill.color} w-8 h-8 sm:h-11 sm:w-11`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-sans font-semibold text-sm text-zinc-100 group-hover/item:text-white transition-colors duration-300 truncate">
+                    <span className="font-sans font-semibold sm:text-sm text-xs text-zinc-100 group-hover/item:text-white transition-colors duration-300 truncate">
                       {skill.name}
                     </span>
                   </motion.div>
@@ -230,7 +230,7 @@ export default function TechStack() {
             className="flex flex-col gap-6"
           >
             <div className="flex flex-col border-b border-white/5 pb-4">
-              <h3 className="text-2xl font-display font-bold text-white tracking-tight flex items-center gap-2">
+              <h3 className="text-lg sm:text-2xl font-display font-bold text-white tracking-tight flex items-center gap-2">
                 <Settings className="w-6 h-6 text-primary" />
                 Development Tools
               </h3>
@@ -244,7 +244,7 @@ export default function TechStack() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-2 sm:gap-4"
             >
               {developmentTools.map((skill, idx) => {
                 const Icon = skill.icon;
@@ -258,14 +258,14 @@ export default function TechStack() {
                       borderColor: "rgba(255,255,255,0.15)",
                       boxShadow: "0 10px 20px rgba(0,0,0,0.4)",
                     }}
-                    className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950/50 border border-white/5 hover:bg-surface/40 transition-all duration-300 h-18 w-full relative overflow-hidden group/item cursor-default"
+                    className="flex items-center gap-4 p-3 rounded-2xl bg-zinc-950/50 border border-white/5 hover:bg-surface/40 transition-all duration-300 w-full relative overflow-hidden group/item cursor-default"
                   >
                     <div
-                      className={`p-2.5 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 ${skill.color} h-11 w-11`}
+                      className={`p-2.5 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 ${skill.color} w-8 h-8 sm:h-11 sm:w-11`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-sans font-semibold text-sm text-zinc-100 group-hover/item:text-white transition-colors duration-300 truncate">
+                    <span className="font-sans font-semibold sm:text-sm text-xs text-zinc-100 group-hover/item:text-white transition-colors duration-300 truncate">
                       {skill.name}
                     </span>
                   </motion.div>
@@ -283,7 +283,7 @@ export default function TechStack() {
             className="flex flex-col gap-6"
           >
             <div className="flex flex-col border-b border-white/5 pb-4">
-              <h3 className="text-2xl font-display font-bold text-white tracking-tight flex items-center gap-2">
+              <h3 className="text-lg sm:text-2xl font-display font-bold text-white tracking-tight flex items-center gap-2">
                 <Sparkles className="w-6 h-6 text-emerald-400" />
                 Professional Skills
               </h3>
@@ -298,7 +298,7 @@ export default function TechStack() {
               initial="hidden"
               whileInView="visible"
               viewport={{ once: true, margin: "-50px" }}
-              className="grid grid-cols-1 sm:grid-cols-2 gap-4"
+              className="grid grid-cols-2 gap-2 sm:gap-4"
             >
               {professionalSkills.map((skill, idx) => {
                 const Icon = skill.icon;
@@ -312,14 +312,14 @@ export default function TechStack() {
                       borderColor: "rgba(255,255,255,0.15)",
                       boxShadow: "0 10px 20px rgba(0,0,0,0.4)",
                     }}
-                    className="flex items-center gap-4 p-4 rounded-2xl bg-zinc-950/50 border border-white/5 hover:bg-surface/40 transition-all duration-300 h-18 w-full relative overflow-hidden group/item cursor-default"
+                    className="flex items-center gap-4 p-3 rounded-2xl bg-zinc-950/50 border border-white/5 hover:bg-surface/40 transition-all duration-300 w-full relative overflow-hidden group/item cursor-default"
                   >
                     <div
-                      className={`p-2.5 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 ${skill.color} h-11 w-11`}
+                      className={`p-2.5 rounded-xl bg-white/5 flex items-center justify-center shrink-0 border border-white/5 ${skill.color} w-8 h-8 sm:h-11 sm:w-11`}
                     >
                       <Icon className="w-5 h-5" />
                     </div>
-                    <span className="font-sans font-semibold text-sm text-zinc-100 group-hover/item:text-white transition-colors duration-300 truncate">
+                    <span className="font-sans font-semibold sm:text-sm text-xs text-zinc-100 group-hover/item:text-white transition-colors duration-300 truncate">
                       {skill.name}
                     </span>
                   </motion.div>

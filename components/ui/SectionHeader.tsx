@@ -23,7 +23,7 @@ export default function SectionHeader({
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, margin: "-50px" }}
       transition={{ duration: 0.5 }}
-      className="flex flex-col items-start mb-16 w-full"
+      className="flex flex-col items-start sm:mb-16 w-full"
     >
       <span className="text-xs font-mono text-primary uppercase tracking-[0.2em] mb-2 flex items-center gap-1.5 font-bold">
         <Icon className="w-4 h-4" />

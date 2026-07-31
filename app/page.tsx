@@ -4,6 +4,7 @@ import About from "@/components/sections/about/about";
 import Contact from "@/components/sections/contact/Contact";
 
 import Hero from "@/components/sections/hero/hero";
+import Projects from "@/components/sections/projects/Projects";
 import TechStack from "@/components/sections/tech-stack/TechStack";
 import Loader from "@/components/ui/Loader";
 import { AnimatePresence, motion } from "motion/react";
@@ -62,6 +63,7 @@ const Home = () => {
             <main className="grow">
               <Hero />
               <About />
+              <Projects />
               <TechStack />
               <Contact />
             </main>

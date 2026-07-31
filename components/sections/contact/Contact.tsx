@@ -54,16 +54,16 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="py-24 px-4 md:px-8 relative bg-background overflow-hidden border-t border-white/5"
+      className="py-8 md:py-24 px-4 md:px-8 relative bg-background overflow-hidden border-t border-white/5"
     >
       {/* Background ambient lighting spheres */}
       <div className="absolute top-[20%] left-[5%] w-100 h-100 bg-cyan/15 rounded-full blur-[130px] pointer-events-none" />
       <div className="absolute bottom-[20%] right-[5%] w-87.5 h-87.5 bg-primary/15 rounded-full blur-[110px] pointer-events-none" />
 
       <div className="container max-w-7xl mx-auto relative z-10">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-start">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-16 items-start">
           {/* Left Column: Heading & Paragraphs */}
-          <div className="lg:col-span-5 flex flex-col gap-6">
+          <div className="lg:col-span-5 flex flex-col gap-3 sm:gap-6">
             <SectionHeader
               icon={Mail}
               sectionNumber="04"
@@ -77,7 +77,7 @@ export default function Contact() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true }}
               transition={{ duration: 0.5, delay: 0.1 }}
-              className="flex flex-col gap-4 text-zinc-400 font-sans text-sm md:text-base md:max-w-md leading-relaxed -mt-10"
+              className="flex flex-col gap-4 text-zinc-400 font-sans text-sm md:text-base md:max-w-md leading-relaxed"
             >
               <p>
                 I&apos;m always interested in hearing about new projects,

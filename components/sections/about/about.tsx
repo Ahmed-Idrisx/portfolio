@@ -20,18 +20,18 @@ export default function About() {
   const technologies = [
     {
       name: "React.js",
-      dotColor: "bg-cyan-400",
-      glowColor: "rgba(34,211,238,0.25)",
+      dotColor: "bg-sky-500",
+      glowColor: "rgba(56,189,248,0.25)",
     },
     {
       name: "Next.js",
-      dotColor: "bg-slate-300",
+      dotColor: "bg-black",
       glowColor: "rgba(255,255,255,0.2)",
     },
     {
       name: "TypeScript",
-      dotColor: "bg-blue-500",
-      glowColor: "rgba(59,130,246,0.25)",
+      dotColor: "bg-blue-600",
+      glowColor: "rgba(37,99,235,0.25)",
     },
     {
       name: "JavaScript",
@@ -40,43 +40,43 @@ export default function About() {
     },
     {
       name: "TanStack Query",
-      dotColor: "bg-gray-400",
-      glowColor: "rgba(156,163,175,0.2)",
+      dotColor: "bg-red-500",
+      glowColor: "rgba(239,68,68,0.25)",
     },
     {
       name: "Redux Toolkit",
-      dotColor: "bg-green-600",
-      glowColor: "rgba(22,163,74,0.25)",
+      dotColor: "bg-purple-600",
+      glowColor: "rgba(147,51,234,0.25)",
     },
     {
       name: "Prisma",
-      dotColor: "bg-teal-400",
-      glowColor: "rgba(45,212,191,0.25)",
+      dotColor: "bg-slate-700",
+      glowColor: "rgba(51,65,85,0.25)",
     },
     {
       name: "PostgreSQL",
-      dotColor: "bg-indigo-500",
-      glowColor: "rgba(99,102,241,0.25)",
+      dotColor: "bg-blue-700",
+      glowColor: "rgba(29,78,216,0.25)",
     },
     {
       name: "Tailwind CSS",
-      dotColor: "bg-sky-400",
-      glowColor: "rgba(56,189,248,0.25)",
+      dotColor: "bg-cyan-400",
+      glowColor: "rgba(34,211,238,0.25)",
     },
     {
       name: "Bootstrap",
+      dotColor: "bg-violet-600",
+      glowColor: "rgba(124,58,237,0.25)",
+    },
+    {
+      name: "Git",
       dotColor: "bg-orange-500",
       glowColor: "rgba(249,115,22,0.25)",
     },
     {
-      name: "Git",
-      dotColor: "bg-orange-600",
-      glowColor: "rgba(234,88,12,0.25)",
-    },
-    {
       name: "GitHub",
-      dotColor: "bg-neutral-200",
-      glowColor: "rgba(255,255,255,0.15)",
+      dotColor: "bg-neutral-300",
+      glowColor: "rgba(212,212,212,0.2)",
     },
   ];
 
@@ -147,7 +147,7 @@ export default function About() {
   return (
     <section
       id="about"
-      className="py-24 px-4 md:px-8 relative bg-background overflow-hidden"
+      className="py-8 md:py-24 px-4 md:px-8 relative bg-background overflow-hidden"
     >
       {/* Background ambient lighting spheres */}
       <div className="absolute top-[20%] left-[5%] w-100 h-100 bg-cyan/15 rounded-full blur-[130px] pointer-events-none" />
