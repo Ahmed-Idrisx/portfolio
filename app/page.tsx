@@ -1,11 +1,11 @@
 "use client";
 
 import Footer from "@/components/layout/Footer";
-import Navbar from "@/components/layout/navbar";
-import About from "@/components/sections/about/about";
+import Navbar from "@/components/layout/Navbar";
+import About from "@/components/sections/about/About";
 import Contact from "@/components/sections/contact/Contact";
 
-import Hero from "@/components/sections/hero/hero";
+import Hero from "@/components/sections/hero/Hero";
 import Projects from "@/components/sections/projects/Projects";
 import TechStack from "@/components/sections/tech-stack/TechStack";
 import Loader from "@/components/ui/Loader";

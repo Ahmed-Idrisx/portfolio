@@ -1,4 +1,3 @@
-import React from "react";
 import { motion } from "motion/react";
 import { LucideIcon } from "lucide-react";
 
@@ -33,7 +32,7 @@ export default function SectionHeader({
       </span>
       <h2
         id={headingId}
-        className="text-3xl md:text-5xl font-display font-bold tracking-tight text-white mb-4"
+        className="text-3xl md:text-5xl font-display font-bold tracking-tight text-text-primary mb-4"
       >
         {heading}
       </h2>

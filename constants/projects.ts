@@ -1,4 +1,9 @@
-export const projects = [
+import type { Project } from "@/types";
+import { TECH_COLORS } from "./techColors";
+
+const tech = (name: string) => ({ name, color: TECH_COLORS[name] ?? "#94a3b8" });
+
+export const projects: Project[] = [
   {
     id: "gocart",
     title: "GoCart",
@@ -7,46 +12,16 @@ export const projects = [
       "A production-ready multi-vendor E-commerce platform featuring three independent experiences — Customer Storefront, Seller Dashboard, and Admin Dashboard — built on a shared Prisma/PostgreSQL backend with role-based authentication, subscriptions, payments, and real-time business management.",
 
     tech: [
-      {
-        name: "Next.js",
-        dotColor: "bg-black",
-      },
-      {
-        name: "TypeScript",
-        dotColor: "bg-blue-600",
-      },
-      {
-        name: "Redux Toolkit",
-        dotColor: "bg-purple-600",
-      },
-      {
-        name: "Prisma",
-        dotColor: "bg-slate-800",
-      },
-      {
-        name: "PostgreSQL",
-        dotColor: "bg-blue-700",
-      },
-      {
-        name: "Clerk",
-        dotColor: "bg-violet-500",
-      },
-      {
-        name: "Stripe",
-        dotColor: "bg-indigo-600",
-      },
-      {
-        name: "Tailwind CSS",
-        dotColor: "bg-cyan-400",
-      },
-      {
-        name: "Inngest",
-        dotColor: "bg-pink-500",
-      },
-      {
-        name: "Recharts",
-        dotColor: "bg-orange-500",
-      },
+      tech("Next.js"),
+      tech("TypeScript"),
+      tech("Redux Toolkit"),
+      tech("Prisma"),
+      tech("PostgreSQL"),
+      tech("Clerk"),
+      tech("Stripe"),
+      tech("Tailwind CSS"),
+      tech("Inngest"),
+      tech("Recharts"),
     ],
 
     features: [
@@ -74,10 +49,8 @@ export const projects = [
       "Split each checkout into seller-specific order groups linked to one parent order. This allowed every seller to receive only the items belonging to their store, independently update order statuses, calculate accurate sales metrics, and access reviews for their own fulfilled orders. Combined with centralized Redux state management and a debounced cart-sync strategy, this kept client and server data synchronized while minimizing unnecessary API requests.",
 
     tag: "Full Stack",
-
     githubUrl:
       "https://github.com/Ahmed-Idrisx/go-cart-multi-vendors-e-commerce-app",
-
     mockUrl: "https://go-cart-multi-vendors-e-commerce-ap.vercel.app/",
     images: [
       "/images/gc-home.png",
@@ -90,39 +63,17 @@ export const projects = [
     id: "quickstay",
     title: "Quick Stay",
     subtitle: "Hotel Booking Platform",
-
     description:
       "A modern hotel booking platform that streamlines the entire reservation experience, featuring a guest-facing booking system and a dedicated hotel-owner dashboard for managing properties, rooms, bookings, and revenue.",
 
     tech: [
-      {
-        name: "React",
-        dotColor: "bg-sky-500",
-      },
-      {
-        name: "TypeScript",
-        dotColor: "bg-blue-600",
-      },
-      {
-        name: "Context API",
-        dotColor: "bg-cyan-500",
-      },
-      {
-        name: "Axios",
-        dotColor: "bg-purple-500",
-      },
-      {
-        name: "Clerk",
-        dotColor: "bg-violet-500",
-      },
-      {
-        name: "Stripe",
-        dotColor: "bg-indigo-600",
-      },
-      {
-        name: "Tailwind CSS",
-        dotColor: "bg-cyan-400",
-      },
+      tech("React"),
+      tech("TypeScript"),
+      tech("Context API"),
+      tech("Axios"),
+      tech("Clerk"),
+      tech("Stripe"),
+      tech("Tailwind CSS"),
     ],
 
     features: [
@@ -149,9 +100,7 @@ export const projects = [
       "Centralized shared application state with Context API, standardized API communication through reusable Axios utilities, and implemented consistent loading/error handling to keep booking, availability, and dashboard data synchronized across the application.",
 
     tag: "Frontend",
-
     githubUrl: "https://github.com/Ahmed-Idrisx/hotel-booking",
-
     mockUrl: "https://quick-stay-delta-liard.vercel.app/",
     images: [
       "/images/qs-home.png",
@@ -162,35 +111,17 @@ export const projects = [
   },
   {
     id: "portfolio",
-
     title: "Portfolio",
-
     subtitle: "Personal Portfolio & Developer Showcase",
-
     description:
       "A modern developer portfolio designed to showcase projects, technical skills, and professional experience through immersive animations, smooth interactions, and performance-focused architecture.",
 
     tech: [
-      {
-        name: "Next.js",
-        dotColor: "bg-black",
-      },
-      {
-        name: "TypeScript",
-        dotColor: "bg-blue-600",
-      },
-      {
-        name: "Tailwind CSS",
-        dotColor: "bg-cyan-400",
-      },
-      {
-        name: "Framer Motion",
-        dotColor: "bg-pink-500",
-      },
-      {
-        name: "Lucide",
-        dotColor: "bg-orange-400",
-      },
+      tech("Next.js"),
+      tech("TypeScript"),
+      tech("Tailwind CSS"),
+      tech("Framer Motion"),
+      tech("Lucide"),
     ],
 
     features: [
@@ -218,11 +149,8 @@ export const projects = [
       "Used component-level optimization techniques, minimized unnecessary renders, and carefully orchestrated animations to maintain smooth interactions while preserving performance.",
 
     tag: "Frontend",
-
     githubUrl: "https://github.com/Ahmed-Idrisx/portfolio",
-
     mockUrl: "https://your-portfolio.vercel.app",
-
     images: [
       "/images/p-home.png",
       "/images/p-projects.png",
@@ -234,27 +162,14 @@ export const projects = [
     id: "bookshop",
     title: "Bookshop",
     subtitle: "Online Book Store",
-
     description:
       "A production-style online bookstore built with Next.js and connected to a real Laravel REST API. The application emphasizes performance, scalability, and maintainability through feature-based architecture, efficient server-state management, and modern frontend optimization techniques.",
 
     tech: [
-      {
-        name: "Next.js",
-        dotColor: "bg-black",
-      },
-      {
-        name: "TypeScript",
-        dotColor: "bg-[#3178C6]",
-      },
-      {
-        name: "TanStack Query",
-        dotColor: "bg-[#FF4154]",
-      },
-      {
-        name: "Tailwind CSS",
-        dotColor: "bg-[#06B6D4]",
-      },
+      tech("Next.js"),
+      tech("TypeScript"),
+      tech("TanStack Query"),
+      tech("Tailwind CSS"),
     ],
 
     features: [
@@ -281,9 +196,7 @@ export const projects = [
       "Leveraged TanStack Query to cache server data, avoid duplicate requests, and selectively invalidate queries after mutations. Combined memoization techniques (React.memo, useMemo, and useCallback) with efficient pagination and filtering strategies to reduce unnecessary renders and improve overall responsiveness while maintaining data consistency.",
 
     tag: "Frontend",
-
     githubUrl: "https://github.com/Ahmed-Idrisx/book-store",
-
     mockUrl: "https://book-store-two-gules.vercel.app/",
     images: [
       "/images/bs-home.png",
