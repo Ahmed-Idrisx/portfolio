@@ -1,8 +1,4 @@
-/**
- * Brand identity color for each technology's dot indicator. Centralizing
- * this means a technology's color is defined once, no matter how many
- * project cards or the About section reference it.
- */
+// Brand identity color for each technology's dot indicator.
 export const TECH_COLORS: Record<string, string> = {
   React: "#61dafb",
   "React.js": "#61dafb",
@@ -22,6 +18,9 @@ export const TECH_COLORS: Record<string, string> = {
   "Framer Motion": "#ec4899",
   Lucide: "#f97316",
   "TanStack Query": "#ff4154",
+  "React Hook Form": "#ec5990",
+  Zod: "#3e67b1",
+  "Grafana k6": "#f46800",
   Bootstrap: "#7952b3",
   Git: "#f05033",
   GitHub: "#e5e7eb",

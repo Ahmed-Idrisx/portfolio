@@ -50,30 +50,37 @@ export default function BrowserMockup({
         onClick={(e) => e.stopPropagation()}
         className="group relative h-full w-full overflow-hidden"
       >
-        <Swiper
-          modules={[Navigation]}
-          navigation={{
-            prevEl: `.prev-${projectId}`,
-            nextEl: `.next-${projectId}`,
-          }}
-          className="h-full w-full"
-          onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex + 1)}
-          loop={images.length > 1}
-        >
-          {images.map((img, index) => (
-            <SwiperSlide key={index} className="relative h-full w-full">
-              <Image
-                src={img}
-                alt={`${alt} - Image ${index + 1}`}
-                fill
-                priority={index === 0}
-                quality={90}
-                sizes="(max-width: 768px) 100vw, (max-width: 1280px) 70vw, 900px"
-                className="object-contain object-center"
-              />
-            </SwiperSlide>
-          ))}
-        </Swiper>
+        {images.length > 0 ? (
+          <Swiper
+            modules={[Navigation]}
+            navigation={{
+              prevEl: `.prev-${projectId}`,
+              nextEl: `.next-${projectId}`,
+            }}
+            className="h-full w-full"
+            onSlideChange={(swiper) => setCurrentSlide(swiper.realIndex + 1)}
+            loop={images.length > 1}
+          >
+            {images.map((img, index) => (
+              <SwiperSlide key={index} className="relative h-full w-full">
+                <Image
+                  src={img}
+                  alt={`${alt} - Image ${index + 1}`}
+                  fill
+                  priority={index === 0}
+                  quality={90}
+                  sizes="(max-width: 768px) 100vw, (max-width: 1280px) 70vw, 900px"
+                  className="object-contain object-center"
+                />
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        ) : (
+          <div className="flex h-full min-h-40 flex-col items-center justify-center gap-2 text-text-muted">
+            <Globe className="h-8 w-8 text-primary/70" />
+            <span className="text-xs font-mono">Project preview</span>
+          </div>
+        )}
 
         {images.length > 1 && (
           <>

@@ -1,6 +1,6 @@
 export const personalInfo = {
   name: "Ahmed Idris",
-  title: "Frontend Software Developer",
+  title: "Frontend Developer",
   roles: [
     "Software Engineer",
     "Frontend Developer",
@@ -11,8 +11,11 @@ export const personalInfo = {
   location: "Cairo, Egypt",
   email: "ahmedidrisx@gmail.com",
   phone: "+201015041410",
+  resumeUrl:
+    "https://drive.google.com/file/d/1JwlsI748PISEwFzUwAWIwco0UX_Kkk9O/view?usp=sharing",
   github: "https://github.com/Ahmed-Idrisx",
   linkedin: "https://www.linkedin.com/in/ahmed-idris-68b4233ba/",
-  summary:
-    "Front-End Software Developer with hands-on experience building full production-style applications with React, Next.js, and TypeScript. Comfortable with Redux Toolkit state management, RESTful API integration, and Prisma/PostgreSQL-backed data layers, through three self-directed projects built end to end. Quick to learn new tools, comfortable reading documentation and existing codebases, and looking to bring that initiative to a professional frontend team.",
+  heroSummary:
+    "Frontend Developer building responsive web applications with React, Next.js, and TypeScript. Freelance experience delivering production-ready projects for companies and collaborating with cross-functional teams.",
+  summary: `Frontend Developer with freelance experience delivering production-ready web applications for companies and collaborating with cross-functional teams of designers, backend developers, QA, and DevOps engineers. Skilled in React.js, Next.js, TypeScript, and Tailwind CSS, translating Figma designs and business requirements into responsive, reusable, and accessible interfaces. Delivered e-commerce platforms serving 300+ end users and supporting 500+ daily interactions. Experienced in REST API integration, secure authentication, form validation, error handling, and Agile delivery using Git/GitHub, Jira, and Trello, contributing from planning and development through testing, deployment, and production support.`,
 };

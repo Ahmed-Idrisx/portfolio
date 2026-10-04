@@ -261,7 +261,7 @@ export default function Hero() {
             transition={{ delay: 0.5, duration: 0.8 }}
             className="text-base md:text-lg text-gray-400 max-w-155 leading-relaxed font-sans"
           >
-            {personalInfo.summary}
+            {personalInfo.heroSummary}
           </motion.p>
 
           {/* Location */}
@@ -299,9 +299,9 @@ export default function Hero() {
             </Link>
 
             <Link
-              href="/api/resume/download"
+              href={personalInfo.resumeUrl}
               target="_blank"
-              download="Ahmed_Idris_Resume.pdf"
+              rel="noopener noreferrer"
               className="px-5 py-3 rounded-xl bg-slate-900/40 text-gray-400 border border-white/5 font-display text-xs hover:border-white/10 hover:text-white transition-all duration-300 flex items-center"
             >
               <FileText className="w-4 h-4 inline mr-2 text-gray-500" />

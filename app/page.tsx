@@ -11,11 +11,12 @@ import TechStack from "@/components/sections/tech-stack/TechStack";
 import Loader from "@/components/ui/Loader";
 import { AnimatePresence, motion } from "motion/react";
 
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
   const [scrollProgress, setScrollProgress] = useState(0);
+  const handleLoadingComplete = useCallback(() => setLoading(false), []);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -49,7 +50,7 @@ const Home = () => {
       {/* Loader reveal */}
       <AnimatePresence mode="wait">
         {loading ? (
-          <Loader key="loader" onComplete={() => setLoading(false)} />
+          <Loader key="loader" onComplete={handleLoadingComplete} />
         ) : (
           <motion.div
             key="content"

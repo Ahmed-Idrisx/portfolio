@@ -2,8 +2,6 @@ import { NextResponse } from "next/server";
 import { Resend } from "resend";
 import { contactSchema } from "@/lib/validation/contact";
 
-const resend = new Resend(process.env.RESEND_API_KEY);
-
 // Escapes user input before it's interpolated into the email HTML
 function escapeHtml(value: string) {
   return value
@@ -35,8 +33,14 @@ export async function POST(req: Request) {
 
     const { name, email, message } = result.data;
 
-    if (!process.env.RESEND_API_KEY || !process.env.CONTACT_EMAIL) {
-      console.error("Missing environment variables.");
+    const apiKey = process.env.RESEND_API_KEY;
+    const fromEmail = process.env.RESEND_FROM_EMAIL;
+    const contactEmail = process.env.CONTACT_EMAIL;
+
+    if (!apiKey || !fromEmail || !contactEmail) {
+      console.error(
+        "Missing RESEND_API_KEY, RESEND_FROM_EMAIL, or CONTACT_EMAIL environment variable.",
+      );
       return NextResponse.json(
         {
           success: false,
@@ -46,9 +50,11 @@ export async function POST(req: Request) {
       );
     }
 
+    const resend = new Resend(apiKey);
+
     const { error } = await resend.emails.send({
-      from: "Portfolio Contact <onboarding@resend.dev>",
-      to: process.env.CONTACT_EMAIL!,
+      from: fromEmail,
+      to: contactEmail,
       subject: `Portfolio new message from ${name}`,
       replyTo: email,
 

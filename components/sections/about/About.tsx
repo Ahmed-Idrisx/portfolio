@@ -147,13 +147,10 @@ export default function About() {
               </div>
             </div>
 
-            <hr className="border-border my-2" />
+            <hr className="border-border my-1" />
 
             <p className="text-text-secondary font-sans leading-relaxed text-sm">
-              Specializing in crafting premium Frontend applications,
-              high-fidelity React/Next.js interfaces, and robust server-side
-              infrastructures with a deep focus on performance metrics, clean
-              software paradigms, and low-latency API integration.
+              {personalInfo.summary}
             </p>
           </div>
 
@@ -166,9 +163,9 @@ export default function About() {
             </Button>
             <Button asChild variant="secondary" className="text-xs sm:text-sm">
               <a
-                href="/api/resume/download"
+                href={personalInfo.resumeUrl}
                 target="_blank"
-                download="Ahmed_Idris_Resume.pdf"
+                rel="noopener noreferrer"
               >
                 <Download className="w-4 h-4 text-cyan" />
                 Get Resume
@@ -184,8 +181,9 @@ export default function About() {
             className="card-surface p-6 md:p-8 flex-1"
           >
             <div className="flex flex-col gap-4">
+              {/* eslint-disable-next-line react/jsx-no-comment-textnodes */}
               <span className="text-[10px] font-mono text-primary uppercase tracking-widest font-bold">
-                SPECIALIZATION PHILOSOPHY
+                // SPECIALIZATION PHILOSOPHY
               </span>
               <h4 className="text-lg md:text-xl font-display font-semibold text-text-primary leading-snug">
                 Building digital experiences that are fast, scalable, and built
@@ -218,7 +216,11 @@ export default function About() {
 
               <div className="flex flex-wrap gap-2.5">
                 {CORE_STACK.map((techItem) => (
-                  <TechChip key={techItem.name} tech={techItem} />
+                  <TechChip
+                    key={techItem.name}
+                    tech={techItem}
+                    className="px-3 py-2 text-xs"
+                  />
                 ))}
               </div>
             </div>

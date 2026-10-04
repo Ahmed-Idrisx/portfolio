@@ -1,20 +1,22 @@
 import { useEffect, useState } from "react";
 import { motion, AnimatePresence } from "motion/react";
 
+const words = [
+  "SOFTWARE",
+  "ARCHITECT",
+  "AUTHENTICATE",
+  "PERFORMANCE",
+  "AHMED IDRIS",
+];
+
 export default function Loader({ onComplete }: { onComplete: () => void }) {
   const [progress, setProgress] = useState(0);
   const [currentText, setCurrentText] = useState("SOFTWARE");
-  const words = [
-    "SOFTWARE",
-    "ARCHITECT",
-    "AUTHENTICATE",
-    "PERFORMANCE",
-    "AHMED IDRIS",
-  ];
 
   useEffect(() => {
     // Cycle words
     let wordIdx = 0;
+    let completionTimeout: ReturnType<typeof setTimeout>;
     const wordInterval = setInterval(() => {
       if (wordIdx < words.length - 1) {
         wordIdx++;
@@ -28,7 +30,7 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
         if (prev >= 100) {
           clearInterval(progressInterval);
           clearInterval(wordInterval);
-          setTimeout(() => {
+          completionTimeout = setTimeout(() => {
             onComplete();
           }, 500);
           return 100;
@@ -41,8 +43,9 @@ export default function Loader({ onComplete }: { onComplete: () => void }) {
     return () => {
       clearInterval(progressInterval);
       clearInterval(wordInterval);
+      clearTimeout(completionTimeout);
     };
-  }, []);
+  }, [onComplete]);
 
   return (
     <motion.div

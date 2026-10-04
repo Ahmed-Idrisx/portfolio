@@ -1,7 +1,10 @@
 import type { Project } from "@/types";
 import { TECH_COLORS } from "./techColors";
 
-const tech = (name: string) => ({ name, color: TECH_COLORS[name] ?? "#94a3b8" });
+const tech = (name: string) => ({
+  name,
+  color: TECH_COLORS[name] ?? "#94a3b8",
+});
 
 export const projects: Project[] = [
   {
@@ -9,7 +12,7 @@ export const projects: Project[] = [
     title: "GoCart",
     subtitle: "Multi-Vendor E-Commerce Platform",
     description:
-      "A production-ready multi-vendor E-commerce platform featuring three independent experiences — Customer Storefront, Seller Dashboard, and Admin Dashboard — built on a shared Prisma/PostgreSQL backend with role-based authentication, subscriptions, payments, and real-time business management.",
+      "Built a multi-vendor marketplace with three role-specific portals — Customer Storefront, Seller Dashboard, and Admin Dashboard — delivering 15+ e-commerce workflows, including product discovery, multi-step checkout, Stripe payments, and dynamic coupons. Optimized for Lighthouse scores above 95 across performance, accessibility, best practices, and SEO.",
 
     tech: [
       tech("Next.js"),
@@ -17,36 +20,34 @@ export const projects: Project[] = [
       tech("Redux Toolkit"),
       tech("Prisma"),
       tech("PostgreSQL"),
-      tech("Clerk"),
       tech("Stripe"),
       tech("Tailwind CSS"),
-      tech("Inngest"),
-      tech("Recharts"),
+      tech("React"),
+      tech("React Hook Form"),
+      tech("Zod"),
     ],
 
     features: [
-      "Customer storefront with product browsing, search, cart, wishlist, reviews, and multi-address checkout.",
-      "Seller dashboard for managing products, inventory, orders, customer reviews, sales analytics, and order status updates.",
-      "Admin dashboard with complete platform oversight, seller approval/suspension, coupons management(add/delete), revenue analytics, and interactive charts.",
-      "Stripe Checkout integration with webhook handling alongside a Cash-on-Delivery payment option.",
-      "Monthly and yearly subscription plans that unlock exclusive coupons and free shipping.",
-      "Dark & Light mode with a fully responsive UI across all dashboards and storefront.",
+      "Three role-specific portals for customers, sellers, and administrators.",
+      "15+ workflows covering product discovery, cart, multi-step checkout, ratings, and multi-address management.",
+      "Secure Stripe payment integration and a dynamic coupon engine.",
+      "Seller tools for managing products, inventory, orders, and sales.",
+      "Admin tools for platform oversight, seller management, coupons, and revenue analytics.",
     ],
 
     responsibilities: [
-      "Built customer-facing features including cart, wishlist, checkout, product ratings, reviews, and address management.",
-      "Implemented five Redux Toolkit slices (cart, wishlist, product, address, rating) with a debounced cart synchronization thunk.",
-      "Integrated Clerk authentication with role-based access control for customers, sellers, and administrators.",
-      "Designed and implemented seller workflows for product management, order fulfillment, sales tracking, and review monitoring.",
-      "Developed the admin dashboard including seller approval, seller suspension, coupon management, platform analytics, and revenue reporting.",
-      "Modeled a 9-model Prisma schema and implemented background jobs using Inngest for user synchronization and automatic coupon expiration.",
+      "Implemented five Redux Toolkit slices to manage cart, wishlist, products, addresses, and ratings.",
+      "Built structured, validated forms using React Hook Form and Zod.",
+      "Developed the customer, seller, and admin experiences and their role-specific commerce workflows.",
+      "Integrated Stripe payments and implemented checkout, coupon, and multi-address flows.",
+      "Optimized payload delivery and server-side rendering to achieve Lighthouse scores above 95 across performance, accessibility, best practices, and SEO.",
     ],
 
     challenges:
-      "Designing a scalable order architecture where a single customer checkout could contain products from multiple sellers while allowing each seller to independently manage only their own orders, sales, and customer reviews without exposing data from other stores.",
+      "Supporting complex multi-vendor shopping and checkout workflows across customer, seller, and admin portals while keeping state and order handling reliable.",
 
     solutions:
-      "Split each checkout into seller-specific order groups linked to one parent order. This allowed every seller to receive only the items belonging to their store, independently update order statuses, calculate accurate sales metrics, and access reviews for their own fulfilled orders. Combined with centralized Redux state management and a debounced cart-sync strategy, this kept client and server data synchronized while minimizing unnecessary API requests.",
+      "Separated the application into role-specific portals, organized client state into five Redux Toolkit slices, and used structured form validation to support maintainable commerce flows. Optimized payload delivery and server rendering to improve performance and SEO.",
 
     tag: "Full Stack",
     githubUrl:
@@ -60,44 +61,45 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "quickstay",
-    title: "Quick Stay",
-    subtitle: "Hotel Booking Platform",
+    id: "nuzul",
+    title: "Nuzul",
+    subtitle: "Hotel Booking Platform (MVP)",
     description:
-      "A modern hotel booking platform that streamlines the entire reservation experience, featuring a guest-facing booking system and a dedicated hotel-owner dashboard for managing properties, rooms, bookings, and revenue.",
+      "Built a production-ready hotel booking MVP with 10+ core features spanning hotel discovery, search and filtering, and guest booking workflows. The platform has served 500+ visitors to date and provides hotel owners with a dashboard for managing rooms, availability, bookings, and operations.",
 
     tech: [
-      tech("React"),
+      tech("Next.js"),
       tech("TypeScript"),
-      tech("Context API"),
-      tech("Axios"),
-      tech("Clerk"),
-      tech("Stripe"),
+      tech("TanStack Query"),
       tech("Tailwind CSS"),
+      tech("React Hook Form"),
+      tech("Zod"),
+      tech("Recharts"),
     ],
 
     features: [
-      "Search hotels by city with filtering, sorting, and real-time room availability.",
-      "Complete booking flow with Stripe payments or Pay-at-Hotel checkout.",
-      "Hotel owner dashboard for registering hotels, managing rooms, uploading images, and tracking reservations.",
-      "Booking history and reservation management for authenticated users.",
-      "Revenue and booking statistics for hotel owners.",
-      "Protected routes with Clerk authentication and role-based access.",
+      "10+ core booking platform features, including hotel discovery, search, filtering, and guest booking workflows.",
+      "Served 500+ visitors to date.",
+      "Hotel-owner dashboard for managing rooms, availability, bookings, and hotel operations.",
+      "Interactive revenue and room analytics visualized with Recharts.",
+      "Responsive and accessible interface with production-grade loading and error states.",
+      "Optimistic updates and validated forms for reliable user interactions.",
     ],
 
     responsibilities: [
-      "Developed the complete guest-facing experience including hotel discovery, filtering, booking, and payment flows.",
-      "Built the hotel-owner dashboard for property management, room creation, booking monitoring, and revenue tracking.",
-      "Integrated Clerk authentication with protected routes and role-based access control.",
-      "Connected the frontend to REST APIs using Axios with reusable request handling and consistent loading/error states.",
-      "Implemented image uploads, booking validation, and payment integration using Stripe.",
+      "Built hotel discovery, search and filtering, and guest booking workflows.",
+      "Developed the hotel-owner dashboard for room, availability, booking, and operations management.",
+      "Visualized revenue and room analytics through interactive Recharts dashboards.",
+      "Engineered data fetching with TanStack Query, strategic caching, and query invalidation.",
+      "Optimized images and lazy-loaded content; implemented optimistic updates and accessible responsive UI patterns.",
+      "Achieved Lighthouse scores above 95 for performance, accessibility, and best practices.",
     ],
 
     challenges:
-      "Keeping hotel availability, booking information, and owner dashboards synchronized while providing a responsive user experience during multiple asynchronous API requests.",
+      "Keeping hotel availability and booking data consistent while making discovery and owner-management interactions feel fast and responsive.",
 
     solutions:
-      "Centralized shared application state with Context API, standardized API communication through reusable Axios utilities, and implemented consistent loading/error handling to keep booking, availability, and dashboard data synchronized across the application.",
+      "Used TanStack Query caching and targeted invalidation to keep server data synchronized, then combined optimized fetching, image optimization, lazy loading, and optimistic updates for responsive interactions.",
 
     tag: "Frontend",
     githubUrl: "https://github.com/Ahmed-Idrisx/hotel-booking",
@@ -150,7 +152,7 @@ export const projects: Project[] = [
 
     tag: "Frontend",
     githubUrl: "https://github.com/Ahmed-Idrisx/portfolio",
-    mockUrl: "https://your-portfolio.vercel.app",
+    mockUrl: "https://portfolio-navy-beta-08p8yyku08.vercel.app/",
     images: [
       "/images/p-home.png",
       "/images/p-projects.png",
@@ -159,49 +161,51 @@ export const projects: Project[] = [
     ],
   },
   {
-    id: "bookshop",
-    title: "Bookshop",
-    subtitle: "Online Book Store",
+    id: "eraasoft",
+    title: "Eraasoft",
+    subtitle: "Education Platform",
     description:
-      "A production-style online bookstore built with Next.js and connected to a real Laravel REST API. The application emphasizes performance, scalability, and maintainability through feature-based architecture, efficient server-state management, and modern frontend optimization techniques.",
+      "Recreated Eraasoft’s official education platform as a responsive Arabic-language experience, translating UI designs and business requirements into reusable frontend components and API-driven flows. Load-tested the platform with Grafana k6 at 300+ concurrent users and achieved a 95 Lighthouse score through ongoing performance optimization.",
 
     tech: [
       tech("Next.js"),
       tech("TypeScript"),
       tech("TanStack Query"),
       tech("Tailwind CSS"),
+      tech("React Hook Form"),
+      tech("Zod"),
+      tech("Grafana k6"),
     ],
 
     features: [
-      "Book discovery with category filtering, search, sorting, and server-side pagination.",
-      "Cart, wishlist, and secure authentication using token-based authorization.",
-      "Checkout flow with optimized server-state synchronization and automatic cache updates.",
-      "Performance-focused UI with loading skeletons, error boundaries, and empty states.",
-      "Responsive design optimized for desktop, tablet, and mobile devices.",
+      "Responsive Arabic-language UI based on Eraasoft’s official platform.",
+      "REST API integration, authentication, validated forms, and dynamic data flows.",
+      "Load-tested the platform with Grafana k6 at 300+ concurrent users.",
+      "Achieved a 95 Lighthouse score through continuous performance optimization and automated testing.",
     ],
 
     responsibilities: [
-      "Designed a feature-based architecture that separated API services, TanStack Query hooks, business logic, and UI components for better scalability and maintainability.",
-      "Implemented TanStack Query for server-state management, including intelligent caching, background refetching, query invalidation, and optimistic UI updates.",
-      "Built product search, category filtering, sorting, and paginated browsing while minimizing unnecessary network requests.",
-      "Optimized rendering performance using React.memo, useMemo, and useCallback to reduce unnecessary component re-renders.",
-      "Implemented reusable loading, error, and empty-state components to provide a smooth user experience throughout the application.",
-      "Integrated the frontend with a real Laravel REST API and implemented secure authentication, cart, wishlist, and checkout flows.",
+      "Recreated the platform UI and implemented reusable frontend components.",
+      "Integrated REST APIs, authentication, form validation, and dynamic data flows.",
+      "Improved Core Web Vitals through image optimization, code splitting, lazy loading, and efficient data fetching.",
+      "Load-tested the platform with Grafana k6 under 300+ concurrent users.",
+      "Achieved a 95 Lighthouse score through continuous performance optimization and automated testing.",
     ],
 
     challenges:
-      "Balancing performance with a dynamic shopping experience while working with a real backend that served frequently changing product data, filters, pagination, and authenticated user actions.",
+      "Recreating a responsive Arabic-language education platform while maintaining strong performance under high concurrent traffic.",
 
     solutions:
-      "Leveraged TanStack Query to cache server data, avoid duplicate requests, and selectively invalidate queries after mutations. Combined memoization techniques (React.memo, useMemo, and useCallback) with efficient pagination and filtering strategies to reduce unnecessary renders and improve overall responsiveness while maintaining data consistency.",
+      "Combined reusable components and efficient API data fetching with image optimization, code splitting, and lazy loading. Validated performance through automated Lighthouse checks and Grafana k6 load tests.",
 
     tag: "Frontend",
-    githubUrl: "https://github.com/Ahmed-Idrisx/book-store",
-    mockUrl: "https://book-store-two-gules.vercel.app/",
+    githubUrl: "https://github.com/Ahmed-Idrisx/eraasoft",
+    mockUrl: "https://eraasoft.vercel.app/",
     images: [
-      "/images/bs-home.png",
-      "/images/bs-books.png",
-      "/images/bs-best-seller.png",
+      "/images/es-home.png",
+      "/images/es-courses.png",
+      "/images/es-free-courses.png",
+      "/images/es-art.png",
     ],
   },
 ];
